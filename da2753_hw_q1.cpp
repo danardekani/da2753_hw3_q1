@@ -2,22 +2,50 @@
 using namespace std;
 
 int main() {
-    double item1, item2, taxRate, basePrice, priceAfterDiscounts, totalPrice, halfOff;
-    char clubCard, noClubCard;
+    double item1, item2, taxRate, basePrice, priceAfterDiscounts, totalPrice, halfOff, clubDiscount, totalTax ;
+    char clubCard;
 
     cout << "Enter price of first item: ";
     cin >> item1;
     cout << "Enter price of second item: ";
     cin >> item2;
+    cout << "Does customer have a club card/ (Y/N): ";
+    cin >> clubCard;
+    cout << "Enter tax rate, e.g. 5.5 for 5.5% tax: " ;
+    cin >> taxRate;
 
+    //Find cheapest item and apply 50% off
     if (item1 < item2)
     {
         halfOff = item1 * .5;
     } else
         halfOff = item2 * .5;
-    cout << item1 << endl;
-    cout << item2 << endl;
-    cout << halfOff << endl;
+
+    //Price of item 1 + item 2
+    basePrice = item1 + item2;
+
+    //Club Member? (yes or no)
+    if ((clubCard == 'Y' || clubCard == 'y') && (clubCard != 'N' || clubCard != 'n'))
+    {
+        clubDiscount = basePrice * .10;
+    } else
+        clubDiscount = clubDiscount;
+
+    // half off and club discount applied to base price
+    priceAfterDiscounts = basePrice - halfOff - clubDiscount;
+
+    //Calculate total tax burden in dollars and cents. Add to total price.
+    taxRate = taxRate / 100;
+    totalTax = priceAfterDiscounts * taxRate;
+
+    //Price after discounts +  total tax
+    totalPrice = priceAfterDiscounts + totalTax;
+
+    cout << "Base price: " << basePrice << endl;
+    cout << "Price after discounts: " << priceAfterDiscounts << endl;
+    cout << "Total price: " << totalPrice << endl;
+
+    cout << totalTax << endl;
 
     return 0;
 }
