@@ -1,15 +1,24 @@
 #include <iostream>
 using namespace std;
 
-int main()
-{
-    double item1, item2, taxRate, basePrice, priceAfterDiscounts, totalPrice;
+int main() {
+    double item1, item2, taxRate, basePrice, priceAfterDiscounts, totalPrice, halfOff;
     char clubCard, noClubCard;
 
     cout << "Enter price of first item: ";
     cin >> item1;
     cout << "Enter price of second item: ";
-    cin >> item2
+    cin >> item2;
+
+    if (item1 < item2)
+    {
+        halfOff = item1 * .5;
+    } else
+        halfOff = item2 * .5;
+    cout << item1 << endl;
+    cout << item2 << endl;
+    cout << halfOff << endl;
+
     return 0;
 }
 
