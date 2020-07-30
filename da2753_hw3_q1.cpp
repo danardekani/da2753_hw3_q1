@@ -45,8 +45,6 @@ int main() {
     cout << "Price after discounts: " << priceAfterDiscounts << endl;
     cout << "Total price: " << totalPrice << endl;
 
-    cout << totalTax << endl;
-
     return 0;
 }
 
