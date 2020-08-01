@@ -25,11 +25,10 @@ int main() {
     basePrice = item1 + item2;
 
     //Club Member? (yes or no)
-    if ((clubCard == 'Y' || clubCard == 'y') && (clubCard != 'N' || clubCard != 'n'))
+    if (clubCard == 'Y' || clubCard == 'y')
     {
         clubDiscount = basePrice * .10;
-    } else
-        clubDiscount = clubDiscount;
+    }
 
     // half off and club discount applied to base price
     priceAfterDiscounts = basePrice - halfOff - clubDiscount;
