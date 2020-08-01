@@ -2,7 +2,7 @@
 using namespace std;
 
 int main() {
-    double item1, item2, taxRate, basePrice, priceAfterDiscounts, totalPrice, halfOff, clubDiscount, totalTax ;
+    double item1, item2, taxRate, basePrice, priceAfterDiscounts, totalPrice, halfOff, clubDiscount;
     char clubCard;
 
     cout << "Enter price of first item: ";
@@ -27,18 +27,18 @@ int main() {
     //Club Member? (yes or no)
     if (clubCard == 'Y' || clubCard == 'y')
     {
-        clubDiscount = basePrice * .10;
+        clubDiscount = basePrice * .09;
     }
 
     // half off and club discount applied to base price
     priceAfterDiscounts = basePrice - halfOff - clubDiscount;
 
     //Calculate total tax burden in dollars and cents. Add to total price.
-    taxRate = taxRate / 100;
-    totalTax = priceAfterDiscounts * taxRate;
+//    taxRate = taxRate / 100;
+//    totalTax = priceAfterDiscounts * taxRate;
 
     //Price after discounts +  total tax
-    totalPrice = priceAfterDiscounts + totalTax;
+    totalPrice = priceAfterDiscounts * (1 + taxRate / 100);
 
     cout << "Base price: " << basePrice << endl;
     cout << "Price after discounts: " << priceAfterDiscounts << endl;
